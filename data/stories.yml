@@ -1,0 +1,39 @@
+version: "2.0"
+
+stories:
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  
+- story: reservation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: reserve_table
+  - action: utter_reserve_people_count
+  - intent: count_reply
+  - action: utter_reserve_time
+  - intent: time_reply
+  - action: utter_get_email
+  - intent: email_reply
+  - action: utter_confirm_reservation
+  - action: utter_goodbye
+
+- story: time faq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: time_faq
+  - action: utter_time_faq
+
+- story: dish faq
+  steps:
+  - intent: dish_faq
+  - action: utter_dish_faq
+
+- story: cancel reservation
+  steps:
+  - intent: cancel_reservation_faq
+  - action: utter_cancel_faq

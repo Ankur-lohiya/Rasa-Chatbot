@@ -1,0 +1,69 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - reserve_table
+  - count_reply
+  - time_reply
+  - email_reply
+  - dish_faq
+  - time_faq
+  - cancel_reservation_faq
+
+entities:
+  - num_count
+  - hour
+  - email
+
+slots:
+  num_count:
+    type: text
+  hour:
+    type: text
+  email:
+    type: text
+
+# actions:
+#   - action_send_email
+
+responses:
+  utter_greet:
+  - text: "Hey! How may I help you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_reserve_people_count:
+  - text: "How many people are you planning to reserve?"
+
+  utter_reserve_time:
+  - text: "At what time should i reserve?"
+
+  utter_confirm_reservation:
+  - text: "Your table is reserved for {num_count} persons at {hour}pm. The details will be mailed to you shortly on {email}."
+
+  utter_get_email:
+  - text: "Please provide your email id."
+
+  utter_time_faq:
+  - text: "We are open on all 7 days of the week. We are open from 4pm to 10pm."
+
+  utter_dish_faq:
+    - text: "We have the best chinese platter."
+  
+  utter_cancel_faq:
+    - text: "To cancel a reservation give us a call at 123456789."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
